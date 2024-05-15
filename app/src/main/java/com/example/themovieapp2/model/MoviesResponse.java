@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+// ket qua response tu api
 public class MoviesResponse {
     @SerializedName("page")
     @Expose

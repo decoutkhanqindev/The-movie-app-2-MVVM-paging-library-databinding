@@ -15,12 +15,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+// thuc hien request http call api
 public class APIClient {
-    public static APIInterface apiInterface;
+    public static APIInterface apiInterface; // instance cua APIInterface
 
-    // retrofit instance
+    // tao mot retrofit instance
     public static APIInterface getApiInterface(){
-        if (apiInterface == null){
+        if (apiInterface == null){ // neu retrofit instance chua dc khoi tao
             OkHttpClient.Builder client = new OkHttpClient().newBuilder();
 
             // them interceptor vao client de chan va sua doi cac request http
@@ -34,7 +35,7 @@ public class APIClient {
 
                 return chain.proceed(request);
             });
-            // tao 1 the hien cua retrofit
+            // tao 1 retrofit instance
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL) // url goc cho tat cac request
                     .addConverterFactory(GsonConverterFactory.create()) // chuyen doi data json sang doi tuong java

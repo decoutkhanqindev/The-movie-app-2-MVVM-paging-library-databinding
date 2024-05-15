@@ -6,10 +6,11 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+// thiet lap khoang cach giua cac doi tuong movie trong recyclerview duoi dang grid
 public class GridSpace extends RecyclerView.ItemDecoration {
-    private final int spanCount;
-    private final int spacing;
-    private final boolean includeEdge;
+    private final int spanCount; // so cot trong grid
+    private final int spacing; // khoang cach giua cac item trong grid
+    private final boolean includeEdge; // ktra xem co bao gom canh ngoai` cua grid hay khong
 
     public GridSpace(int spanCount, int spacing, boolean includeEdge) {
         this.spanCount = spanCount;

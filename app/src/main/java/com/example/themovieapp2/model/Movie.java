@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
+// doi tuong movie trong MoviesResponse.getResults
 public class Movie {
     @SerializedName("id")
     @Expose
