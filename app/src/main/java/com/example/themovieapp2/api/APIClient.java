@@ -47,6 +47,7 @@ public class APIClient {
         return apiInterface;
     }
 
+    // end point cua url
     public interface APIInterface{
         @GET("movie/popular")
         Single<MoviesResponse> getMoviesByPage(@Query("page") Integer page);
