@@ -14,7 +14,7 @@ import com.example.themovieapp2.model.Movie;
 
 // adapter hien thi list movies trong 1 recyclerview su dung paging3
 public class MoviesPagingAdapter extends PagingDataAdapter<Movie, MoviesPagingAdapter.MovieViewHolder> {
-    public final static int LOAD_ITEM = 0; // 1 process load data cho item
+    public final static int LOAD_ITEM = 0; // 1 process load data cho movie item
     public final static int MOVIE_ITEM = 1; // hien thi thong tin 1 movie
     RequestManager glide; // dung de load img
 
