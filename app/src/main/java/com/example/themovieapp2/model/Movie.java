@@ -1,10 +1,7 @@
 package com.example.themovieapp2.model;
 
-import androidx.annotation.Nullable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 import java.util.Objects;
 
 public class Movie {
