@@ -27,8 +27,9 @@ public class APIClient {
             client.addInterceptor(chain -> {
                 Request original = chain.request(); // lay request ban dau
                 HttpUrl originalHttpUrl = original.url(); // lay url ban dau
-                HttpUrl newHttpUrl = originalHttpUrl.newBuilder().addQueryParameter("api_key", API_KEY).build(); // tao 1 url moi tu url ban dau bang cach them tham so truy van api_key
-                Request.Builder requestBuilder = original.newBuilder(); // lay request moi dc tao tu url moi
+                HttpUrl newHttpUrl = originalHttpUrl.newBuilder()
+                        .addQueryParameter("api_key", API_KEY).build(); // tao 1 url moi tu url ban dau bang cach them tham so truy van api_key
+                Request.Builder requestBuilder = original.newBuilder().url(newHttpUrl); // lay request moi dc tao tu url moi
                 Request request = requestBuilder.build(); // tao 1 request moi voi url moi
 
                 return chain.proceed(request);
