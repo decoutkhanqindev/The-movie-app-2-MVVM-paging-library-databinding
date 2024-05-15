@@ -48,6 +48,9 @@ dependencies {
     // retrofit gson converter
     //noinspection UseTomlInstead
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    // RxJava3 with retrofit
+    //noinspection UseTomlInstead
+    implementation("com.squareup.retrofit2:adapter-rxjava3:2.11.0");
 
     // paging library
     val pagingVersion = "3.3.0"
