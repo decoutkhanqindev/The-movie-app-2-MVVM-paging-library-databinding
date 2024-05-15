@@ -20,6 +20,8 @@ import com.example.themovieapp2.utility.GridSpace;
 import com.example.themovieapp2.utility.MovieComparator;
 import com.example.themovieapp2.viewmodel.MovieViewModel;
 
+import javax.inject.Inject;
+
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint // danh dau main activity la diem nhap cho Hilt them cac phu thuoc cua no
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     MovieViewModel movieViewModel; // la 1 viewmodel chua list movies
     ActivityMainBinding mainBinding; // la 1 bien dc tao ra boi Databinding dc su dung de truy cap cac thanh phan trong main layout
     MoviesPagingAdapter moviesPagingAdapter; // la 1 adapter su dung de hien thi list movies va trang thai load list movies
+    @Inject
     RequestManager requestManager; // su dung de quan ly yeu cau img
 
     @SuppressLint("CheckResult")
