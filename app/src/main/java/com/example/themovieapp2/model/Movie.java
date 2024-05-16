@@ -14,6 +14,10 @@ public class Movie {
     @Expose
     private String posterPath;
 
+    @SerializedName("title")
+    @Expose
+    private String title;
+
     @SerializedName("vote_average")
     @Expose
     private Double voteAverage;
@@ -32,6 +36,14 @@ public class Movie {
 
     public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Double getVoteAverage() {

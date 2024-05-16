@@ -28,8 +28,7 @@ public class APIClient {
             client.addInterceptor(chain -> {
                 Request original = chain.request(); // lay request ban dau
                 HttpUrl originalHttpUrl = original.url(); // lay url ban dau
-                HttpUrl newHttpUrl = originalHttpUrl.newBuilder()
-                        .addQueryParameter("api_key", API_KEY).build(); // tao 1 url moi tu url ban dau bang cach them tham so truy van api_key
+                HttpUrl newHttpUrl = originalHttpUrl.newBuilder().addQueryParameter("api_key", API_KEY).build(); // tao 1 url moi tu url ban dau bang cach them tham so truy van api_key
                 Request.Builder requestBuilder = original.newBuilder().url(newHttpUrl); // lay request moi dc tao tu url moi
                 Request request = requestBuilder.build(); // tao 1 request moi voi url moi
 
@@ -38,6 +37,7 @@ public class APIClient {
             // tao 1 retrofit instance
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL) // url goc cho tat cac request
+                    .client(client.build()) // tao 1 interface api de call api
                     .addConverterFactory(GsonConverterFactory.create()) // chuyen doi data json sang doi tuong java
                     .addCallAdapterFactory(RxJava3CallAdapterFactory.create()) // retrofit su dung RxJava de xu ly bat dong bo
                     .build();

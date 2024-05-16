@@ -29,8 +29,7 @@ public class MovieViewModel extends ViewModel {
         // cau hinh pager
         // kich thuoc moi trang, kich thuoc tai ban dau, khong su dung placeholder, khoang cach tai trc, kich thuoc toi da cua bo nho cache
         Pager<Integer, Movie> pager = new Pager<Integer, Movie>(
-                new PagingConfig(20, 20, false, 20, 20 * 499),
-                () -> moviePagingSource);
+                new PagingConfig(20, 20, false, 20, 20 * 499), () -> moviePagingSource);
 
         // tao 1 flowable tu pager cho phep du lieu truyen theo dong de xu ly phan ung
         moviePagingDataFlowable = PagingRx.getFlowable(pager);

@@ -1,5 +1,6 @@
 package com.example.themovieapp2.adapter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -31,23 +32,22 @@ public class MoviesPagingAdapter extends PagingDataAdapter<Movie, MoviesPagingAd
     }
 
     // dc goi de hien thi data tai vi tri va gan data vao doi tuong MovieViewHolder
+    @SuppressLint("DefaultLocale")
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         Movie currentMovie = getItem(position);
 
         if (currentMovie != null){
             glide.load("https://image.tmdb.org/t/p/w500" + currentMovie.getPosterPath()).into(holder.movieItemBinding.movieItemImg);
-            holder.movieItemBinding.movieItemRating.setText(String.valueOf(currentMovie.getVoteAverage()));
+            holder.movieItemBinding.movieItemTitle.setText(currentMovie.getTitle());
+            holder.movieItemBinding.movieItemRating.setText(String.format("%.1f", currentMovie.getVoteAverage()));
         }
     }
 
     // xac dinh loai view nao se dc hien thi tai 1 vi tri nhat dinh
     @Override
     public int getItemViewType(int position) {
-        if (position == getItemCount()){
-            return MOVIE_ITEM;
-        }
-        return LOAD_ITEM;
+        return position == getItemCount() ? MOVIE_ITEM : LOAD_ITEM;
     }
 
     // giu view cho 1 movie item

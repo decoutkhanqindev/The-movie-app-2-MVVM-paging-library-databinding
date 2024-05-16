@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     private void initRecyclerviewAndAdapter() {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2); // tao 1 layout luoi voi 2 cot
         mainBinding.recyclerview.setLayoutManager(gridLayoutManager); // dat grid layout lam layout cho recyclerview
-        mainBinding.recyclerview.addItemDecoration(new GridSpace(2, 20, true)); // config khoang cach trong grid layout
+        mainBinding.recyclerview.addItemDecoration(new GridSpace(2, 50, true)); // config khoang cach trong grid layout
         // dat adapter cho recyclerview va them 1 load state footer
         mainBinding.recyclerview.setAdapter(moviesPagingAdapter.withLoadStateFooter(
                 new MovieLoadStateAdapter(view -> {
